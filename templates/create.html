@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Создать новый опрос</title>
+    <title>Web Application/Create</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Создать новый опрос</h1>
+    <h2>Создать новый опрос</h2>
     <form method="post">
         <label for="title">Название опроса:</label>
         <input type="text" id="title" name="title" required><br><br>
@@ -17,7 +17,6 @@
                 <label>Варианты ответов:</label><br>
                 <input type="text" name="choice_0" required><br>
                 <input type="text" name="choice_0" required><br>
-                <input type="text" name="choice_0"><br>
                 <input type="text" name="choice_0"><br>
             </div>
         </div>
