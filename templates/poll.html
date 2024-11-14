@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ poll['question'] }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ poll['title'] }}</h1>
+    <form method="post">
+        {% for question in questions %}
+            <h3>{{ question['question'] }}</h3>
+            {% for choice in choices[question['id']] %}
+                <label>
+                    <input type="radio" name="choice_{{ question['id'] }}" value="{{ choice['id'] }}"> {{ choice['choice'] }}
+                </label><br>
+            {% endfor %}
+        {% endfor %}
+        <button type="submit">Голосовать</button>
+    </form>
+</body>
+</html>

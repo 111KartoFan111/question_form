@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Web Application</h1>
+        <h2>Доступные опросы:</h2>
+        <ul>
+            {% for poll in polls %}
+                <li>
+                    <a href="{{ url_for('poll', poll_id=poll['id']) }}">{{ poll['title'] }}</a> |
+                    <a href="{{ url_for('results', poll_id=poll['id']) }}">Результаты</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('create') }}" class="button">Создать новый опрос</a>
+    </div>
+</body>
+</html>

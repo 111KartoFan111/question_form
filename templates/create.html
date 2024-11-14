@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать новый опрос</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Создать новый опрос</h1>
+    <form method="post">
+        <label for="title">Название опроса:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        <div id="questions">
+            <div class="question">
+                <label>Вопрос:</label>
+                <input type="text" name="question" required><br>
+                <label>Варианты ответов:</label><br>
+                <input type="text" name="choice_0" required><br>
+                <input type="text" name="choice_0" required><br>
+                <input type="text" name="choice_0"><br>
+                <input type="text" name="choice_0"><br>
+            </div>
+        </div>
+        <button type="button" onclick="addQuestion()">Добавить вопрос</button>
+        <button type="submit">Создать опрос</button>
+    </form>
+    <a href="{{ url_for('home') }}">Вернуться на главную</a>
+    <script>
+        let questionIndex = 1;
+        function addQuestion() {
+            const questionsDiv = document.getElementById('questions');
+            const newQuestionDiv = document.createElement('div');
+            newQuestionDiv.classList.add('question');
+            newQuestionDiv.innerHTML = `
+                <label>Вопрос:</label>
+                <input type="text" name="question" required><br>
+                <label>Варианты ответов:</label><br>
+                <input type="text" name="choice_${questionIndex}" required><br>
+                <input type="text" name="choice_${questionIndex}"><br>
+                <input type="text" name="choice_${questionIndex}"><br>
+                <input type="text" name="choice_${questionIndex}"><br>
+            `;
+            questionsDiv.appendChild(newQuestionDiv);
+            questionIndex++;
+        }
+    </script>
+</body>
+</html>
