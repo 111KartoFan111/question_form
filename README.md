@@ -1,3 +1,4 @@
+#БД Создается при запуске
 ```
 question_form/
 ├── app.py
@@ -8,6 +9,7 @@ question_form/
 │ ├── results.html
 ├── static/
 │   └── styles.css
+├── polls.db
 ```
 ```pip install Flask```
 ---
