@@ -1,10 +1,4 @@
-# question_form
-#question_form/
-#├── app.py
-#├── templates/
-#│ ├── home.html
-#│ ├── poll.html
-#│ ├── create.html
-#│ ├── results.html
-#├── static/
-#│   └── styles.css
+---
+![image](https://github.com/user-attachments/assets/77e38163-cea2-4416-827a-de9e9349ddb4)
+---
+```pip install Flask```
